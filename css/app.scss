@@ -10,6 +10,20 @@ header{
         justify-content: space-between;
         padding: 10px 20px;
         background-color: black;
+
+        input{
+            padding: 5px 2px;
+            border: none;
+            outline:none;
+            font-size: 1.1em;
+        }
+        button{
+            padding:5px 10px ;
+            border:none;
+            background-color: red;
+            color: white;
+            font-size: 1.1em ;
+        }
         .logo{
             color: red;
             font-weight: bold;

@@ -19,6 +19,21 @@ header nav {
   background-color: black;
 }
 
+header nav input {
+  padding: 5px 2px;
+  border: none;
+  outline: none;
+  font-size: 1.1em;
+}
+
+header nav button {
+  padding: 5px 10px;
+  border: none;
+  background-color: red;
+  color: white;
+  font-size: 1.1em;
+}
+
 header nav .logo {
   color: red;
   font-weight: bold;
