@@ -7,7 +7,7 @@ let url='https://image.tmdb.org/t/p/w500'
 let container=document.querySelector('.container')
 let tab=[];
 let clear=setInterval(() => {
-    let res=fetch(`https://api.themoviedb.org/3/movie/${550+i}?api_key=${key}`).then(res=>{
+    let res=fetch(`https://api.themoviedb.org/3/movie/${550+i}?api_key=${key}&?language=FR`).then(res=>{
         return res.json()
         }).then(data=>{
             tab.push(data);
@@ -22,8 +22,7 @@ let clear=setInterval(() => {
                     this.classList.add('in');
                 }
             })
-
-
+            // etirer sur le tableau de data de l'API 
             tab.forEach(e => {
                 if(!e.status_message){
                     let div=document.createElement('div')
