@@ -64,8 +64,16 @@ header{
     background-color: #333;
      .lodding{
           width: 100%;
+          position: fixed;
           height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           background-color: #333;
+          transition: 1s opacity;
+          img{
+              background-color: #333;
+          }
          &.fade{
              opacity: 0;
          }

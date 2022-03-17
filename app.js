@@ -1,3 +1,5 @@
+// lodding de la page
+let load=document.querySelector('.lodding')
 // appele une api avec les promess
 const key='ca451e264da44b3b907051f63fa549e8';
 let i=1;
@@ -13,7 +15,15 @@ let clear=setInterval(() => {
         i=i+2;
         if(tab.length === 30){
             clearInterval(clear);
-            console.log(tab)
+            // remove the loader from container
+            load.classList.add('fade');
+            load.addEventListener('transitionend',function(){
+                if(this.classList.contains('fade')){
+                    this.classList.add('in');
+                }
+            })
+
+
             tab.forEach(e => {
                 if(!e.status_message){
                     let div=document.createElement('div')
