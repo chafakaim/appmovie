@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 20px;
+  background-color: black;
+}
+
+header nav .logo {
+  color: red;
+  font-weight: bold;
+  font-size: 1.8em;
+  text-transform: capitalize;
+}
+
+header nav ul {
+  cursor: pointer;
+  list-style: none;
+}
+
+header nav ul li {
+  background-color: white;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 5px;
+}
+
+header nav ul:hover li:nth-child(2) {
+  opacity: 0;
+}
+
+header nav ul:hover li:nth-child(1) {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotateZ(-45deg) translateY(8px);
+          transform: rotateZ(-45deg) translateY(8px);
+}
+
+header nav ul:hover li:nth-child(3) {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotateZ(43deg) translateX(-3px) translateY(-14px);
+          transform: rotateZ(43deg) translateX(-3px) translateY(-14px);
+}
+
+.main {
+  width: 100%;
+  background-color: #333;
+  height: 100vh;
+}
+/*# sourceMappingURL=app.css.map */
