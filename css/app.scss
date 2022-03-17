@@ -79,6 +79,13 @@ header{
             gap: 20px;
             height: 350Px;
             margin-bottom: 20px;
+            overflow-y: hidden;
+            .image{
+                width:100%;
+                img{
+                    width: 100%;
+                }
+            }
             p{
                 height: 200px;
                 padding: 0 5px;

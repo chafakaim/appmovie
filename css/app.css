@@ -100,6 +100,15 @@ header nav ul:hover li:nth-child(3) {
   gap: 20px;
   height: 350Px;
   margin-bottom: 20px;
+  overflow-y: hidden;
+}
+
+.main .container .box .image {
+  width: 100%;
+}
+
+.main .container .box .image img {
+  width: 100%;
 }
 
 .main .container .box p {
