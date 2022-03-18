@@ -92,6 +92,7 @@ header{
         justify-content: space-around;
        flex-wrap: wrap;
         .box{
+            position:relative;
             width: calc((100% / 3) - 30px);
             border: 1px solid red;
             text-align: center;
@@ -100,14 +101,28 @@ header{
             height: 350Px;
             margin-bottom: 20px;
             overflow-y: hidden;
+            
+            &:hover p{
+            transition:1s all;
+            height:auto;
+            }
             .image{
+                border-bottom: 1px solid #f1f1f1;
                 width:100%;
                 img{
                     width: 100%;
                 }
             }
-            p{
-                height: 200px;
+
+            p{ 
+                position:absolute;
+                bottom:0;
+                transition: .5s all;
+                font-weight: 500;
+                background-color: white;
+                color:black;
+                z-index: 999;
+                height: 0;
                 padding: 0 5px;
                 word-wrap:break-word;
                 overflow:hidden;

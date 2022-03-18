@@ -124,6 +124,7 @@ header nav ul:hover li:nth-child(3) {
 }
 
 .main .container .box {
+  position: relative;
   width: calc((100% / 3) - 30px);
   border: 1px solid red;
   text-align: center;
@@ -134,7 +135,14 @@ header nav ul:hover li:nth-child(3) {
   overflow-y: hidden;
 }
 
+.main .container .box:hover p {
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  height: auto;
+}
+
 .main .container .box .image {
+  border-bottom: 1px solid #f1f1f1;
   width: 100%;
 }
 
@@ -143,7 +151,15 @@ header nav ul:hover li:nth-child(3) {
 }
 
 .main .container .box p {
-  height: 200px;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+  font-weight: 500;
+  background-color: white;
+  color: black;
+  z-index: 999;
+  height: 0;
   padding: 0 5px;
   word-wrap: break-word;
   overflow: hidden;
