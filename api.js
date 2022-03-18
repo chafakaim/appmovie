@@ -5,6 +5,9 @@ class Apimovie{
         this.url=url;
         this.tab=[];
         // methode qui va faire la requete a l'api
+        this.fetchapi(this.string);
+        // appele de la methode de display des donner dans l'application
+        this.display(this.tab,this.container);
     }
     /**
      * 
@@ -28,10 +31,15 @@ class Apimovie{
         }, 100);
         return this.tab;
     }
-    display=function(){
+
+    /**
+     * @param {array} tab
+     * @param {HTMLElement} container
+     */
+    display=function(tab,container){
         const urls='https://image.tmdb.org/t/p/w500';
-        this.tab.forEach(e => {
-        this.container.innerHTML=`<div class="box">
+        tab.forEach(e => {
+        container.innerHTML=`<div class="box">
        <div class="image"><img src=${urls+e.backdrop_path}></div>
        <h2 class="title">${e.title}</h2>
        <p class="logo">${e.overview}</p>
