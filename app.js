@@ -68,9 +68,7 @@ let clear=setInterval(() => {
               })
 
             // etirer sur le tableau de data de l'API 
-            tab.forEach(e => {
-                console.log('log');
-                
+            tab.forEach(e => {               
                 if(!e.status_message){
                   
                     let div=document.createElement('div')
