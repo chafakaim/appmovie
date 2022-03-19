@@ -74,6 +74,7 @@ header nav ul:hover li:nth-child(3) {
 .main {
   position: relative;
   width: 100%;
+  height: min-width(90vh);
   background-color: #333;
 }
 
@@ -115,6 +116,7 @@ header nav ul:hover li:nth-child(3) {
       -ms-flex-align: center;
           align-items: center;
   max-width: 1300Px;
+  height: min-width(90vh);
   margin: 0px auto;
   padding: 60px;
   -ms-flex-pack: distribute;
@@ -167,5 +169,31 @@ header nav ul:hover li:nth-child(3) {
 
 .main .container .box h2 {
   padding: 10px;
+}
+
+.main .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main .pagination button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(40%, black), to(#3f1414));
+  background-image: linear-gradient(to right, black 40%, #3f1414);
+  background-position: 0 200%;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=app.css.map */

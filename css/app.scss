@@ -134,4 +134,25 @@ header{
             }
         }
     }
+    .pagination{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        button{
+            border:none;
+            outline:none;
+            padding: 10px 20px;
+            font-size:1.2em;
+            color: white;
+            background-image: linear-gradient(to right,black 40%,rgb(63, 20, 20));
+            background-position: 0 200%;
+            margin-right: 20px;
+            margin-bottom: 40px;
+
+            cursor: pointer;
+
+
+        }
+    }
 }

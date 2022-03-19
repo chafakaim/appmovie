@@ -5,6 +5,7 @@ class Apimovie{
         this.form=form;
         this.container=container;
         this.tab=[];
+        this.urls='https://image.tmdb.org/t/p/w500';
         this.lodding=true;
         // methode qui va faire la requete a l'api
         this.fetchapi(this.keyapi,this.tab);
@@ -20,7 +21,7 @@ class Apimovie{
      * 
      * @param {string} key  
      */
-    fetchapi=function(key,tab){
+    fetchapi=function(key,tab,page){
         let i=1;
         let clear=setInterval(() => {
             fetch(`https://api.themoviedb.org/3/movie/${550+i}?api_key=${key}`)
@@ -49,7 +50,7 @@ class Apimovie{
             }
             i++;
         }, 100);
-        if(tab.length === 50){
+        if(tab.length === page){
             return this.tab;
         }
     }.bind(this);
@@ -59,7 +60,7 @@ class Apimovie{
      * @param {HTMLElement} container
      */
     display=function(tab,container){
-        const urls='https://image.tmdb.org/t/p/w500';
+
         tab.forEach(e => {
             if(!e.status_message){
                 let div=document.createElement('div')
@@ -67,7 +68,7 @@ class Apimovie{
                 let image=document.createElement('div')
                 image.className='image';
                 let img=document.createElement('img')
-                img.setAttribute('src',urls+e.backdrop_path);
+                img.setAttribute('src',this.urls+e.backdrop_path);
                 let p=document.createElement('p')
                 p.innerHTML=e.overview;
 
@@ -84,7 +85,7 @@ class Apimovie{
       
     }.bind(this);
 
-    serch=function(value,tab,container,form){
+    serch=function(tab,container,form){
         {
                 let input=form.querySelector('input');
                 Array.from(container.children).forEach(e=>{
@@ -93,34 +94,39 @@ class Apimovie{
 
                 tab=tab.filter(ele=>{
                     if(ele.title !== undefined){
-                        let string=form[0][0].value.charAt(0).toUpperCase()+form[0][0].value.slice(1,form[0][0].value.length); 
-                      if(ele.title.indexOf(string) !== -1){
+                        let string=input.value.charAt(0).toUpperCase()+input.value.slice(1,input.value.length); 
+                      if(ele.title.includes(string)){
                           console.log(ele);
                           return ele;
                       }
                      }
                 })
-                tab.forEach(e => {
-                    if(!e.status_message){
-                        let div=document.createElement('div')
-                        div.className='box';
-                        let image=document.createElement('div')
-                        image.className='image';
-                        let img=document.createElement('img')
-                        img.setAttribute('src',urls+e.backdrop_path);
-                        let p=document.createElement('p')
-                        p.innerHTML=e.overview;
-        
-                        image.appendChild(img);
-                        div.appendChild(image);
-                        
-                        let title =document.createElement('h2')
-                        title.innerHTML=e.title;
-                        div.appendChild(title);
-                        div.appendChild(p);
-                        container.appendChild(div);
-                    }
-                });
+                if(tab.length === 0){
+                     container.innerHTML='desolé on pas trouver de resultats dans cette api veuillez essayer.'
+                }else{
+                    tab.forEach(e => {
+                        if(!e.status_message){
+                            let div=document.createElement('div')
+                            div.className='box';
+                            let image=document.createElement('div')
+                            image.className='image';
+                            let img=document.createElement('img')
+                            img.setAttribute('src',this.urls+e.backdrop_path);
+                            let p=document.createElement('p')
+                            p.innerHTML=e.overview;
+            
+                            image.appendChild(img);
+                            div.appendChild(image);
+                            
+                            let title =document.createElement('h2')
+                            title.innerHTML=e.title;
+                            div.appendChild(title);
+                            div.appendChild(p);
+                            container.appendChild(div);
+                        }
+                    });
+                }
+                
       }     
 
 
