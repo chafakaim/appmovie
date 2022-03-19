@@ -54,7 +54,7 @@ class Apimovie{
      detailscontent=function(root){
         let h2=root.querySelector('h2').innerText;
         let p=root.querySelector('p').innerText;
-        let image=document.querySelector('.image img').getAttribute('src');
+        let image=document.querySelector('.image img').src;
         console.log(image);
         let details=document.createElement('div')
         details.className='details';
@@ -183,9 +183,5 @@ class Apimovie{
 
     }.bind(this);
 };
-let key='ca451e264da44b3b907051f63fa549e8';
-let container= document.querySelector('.container');
-let form=document.querySelector('form')
-let load=document.querySelector('.lodding');
-let input=document.querySelector('input[type="text"]');
-let apimovie=new Apimovie(container,key,load,form);
+
+export {Apimovie};
