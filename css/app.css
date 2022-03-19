@@ -162,6 +162,7 @@ header nav ul:hover li:nth-child(3) {
 .main .container .box p {
   position: absolute;
   bottom: 0;
+  display: none;
   -webkit-transition: .5s all;
   transition: .5s all;
   font-weight: 500;
@@ -220,6 +221,16 @@ header nav ul:hover li:nth-child(3) {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.details .delate {
+  padding: 10px;
+  color: white;
+  background: red;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 30px;
 }
 
 .details .content {

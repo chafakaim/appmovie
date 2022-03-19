@@ -33,7 +33,20 @@ class Apimovie{
               this.detailscontent(e.target);
             }
         })
+        document.body.addEventListener('click',(e)=>{
+            if(e.target.className === 'delate'){
+                console.log('delate')
+              this.deletecontent(e.target);
+            }
+        })
         }
+// ************fin du constructeur**************************
+
+// gestion du delate du details 
+       deletecontent=function(div){
+           div.parentNode.parentNode.removeChild(div.parentNode);
+       }
+
         /**
          * @param {HTMLElement} root
          */
@@ -42,10 +55,11 @@ class Apimovie{
         let h2=root.querySelector('h2').innerText;
         let p=root.querySelector('p').innerText;
         let image=document.querySelector('.image img').getAttribute('src');
-
+        console.log(image);
         let details=document.createElement('div')
         details.className='details';
         details.innerHTML=`
+        <div class='delate'>x</div>
         <div class="content">
         <h2>${h2}</h2>
         <p>${p}</p>

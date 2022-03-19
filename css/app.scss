@@ -123,6 +123,7 @@ header{
             p{ 
                 position:absolute;
                 bottom:0;
+                display: none;
                 transition: .5s all;
                 font-weight: 500;
                 background-color: white;
@@ -176,6 +177,16 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .delate{
+        padding: 10px;
+        color: white;
+        background: red;
+        cursor: pointer;
+        position: absolute;
+        top:40px;
+        right: 30px;
+    }
      .content{
          display: grid;
          width: 500px;
