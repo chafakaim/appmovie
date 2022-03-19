@@ -5,26 +5,64 @@ class Apimovie{
         this.form=form;
         this.container=container;
         this.tab=[];
+        this.page=50
         this.urls='https://image.tmdb.org/t/p/w500';
         this.lodding=true;
+
         // methode qui va faire la requete a l'api
-        this.fetchapi(this.keyapi,this.tab);
-        // appele de la methode de display des donner dans l'application
+        this.fetchapi(this.keyapi,this.tab,this.page);
+        //gestion du loder
 
         //   getion de la recherche dans l'application
           this.form.addEventListener('submit',(e)=>{
               e.preventDefault();
             this.serch(this.tab,this.container,this.form);
           })
+          
+        //getion de la recherche de plus de movie
+        let button=container.parentNode.querySelector('.pagination button');
+        button.addEventListener('click',()=>{
+            this.page+=10;
+            this.fetchapi(this.keyapi,this.tab,this.page);
+        })
+
+        // gestion des details de l'affichage
+        document.addEventListener('click',(e)=>{
+            if(e.target.className === 'box'){
+              this.detailscontent(e.target);
+            }
+        })
+
         }
+        /**
+         * @param {HTMLElement} root
+         */
+
+     detailscontent=function(root){
+        let h2=root.querySelector('h2').innerText;
+        let p=root.querySelector('p').innerText;
+        let image=document.querySelector('.image img').getAttribute('src');
+
+        let details=document.createElement('div')
+        details.className='detais';
+        details.innerHTML=`
+        <div class="content">
+        <h2>${h2}</h2>
+        <p>${p}</p>
+        <div class='image'><img src=${image}></div>          
+        </div>
+        `;
+
+        document.body.appendChild('detail')
+     }.bind(this)   
     /**
      * 
      * @param {string} key  
      */
-    fetchapi=function(key,tab,page){
+    fetchapi=function(key,tab,page=50){
         let i=1;
         let clear=setInterval(() => {
-            fetch(`https://api.themoviedb.org/3/movie/${550+i}?api_key=${key}`)
+            fetch(`https://api.themoviedb.org/3/movie/${(page === 50? 550 :550+page)+i}?api_key=${key}`)
             .then(res=>{
                 return res.json();
             })
@@ -33,11 +71,10 @@ class Apimovie{
             })
               console.log(tab)
             // clean du set intervale a une longeur volue du this.tab
-            if(tab.length >= 50){
+            if(tab.length >= page){
                 clearInterval(clear);
                 this.lodding=false;
                 this.display(tab,this.container);
-                   
                 // gestion du lodeur de la page
                 if(this.lodding === false){
                     load.classList.add('fade');
@@ -60,7 +97,7 @@ class Apimovie{
      * @param {HTMLElement} container
      */
     display=function(tab,container){
-
+     container.innerHTML='';
         tab.forEach(e => {
             if(!e.status_message){
                 let div=document.createElement('div')

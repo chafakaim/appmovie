@@ -94,9 +94,11 @@ header{
         justify-content: space-around;
        flex-wrap: wrap;
         .box{
+            cursor:pointer;
             position:relative;
+            border-radius: 5px;
+            box-shadow:0px 0px 20px rgb(58, 16, 16);
             width: calc((100% / 3) - 30px);
-            border: 1px solid red;
             text-align: center;
             color:azure;
             gap: 20px;
@@ -110,12 +112,11 @@ header{
             }
             .image{
                 border-bottom: 1px solid #f1f1f1;
-                width:100%;
+                min-width:100%;
                 img{
                     width: 100%;
                 }
             }
-
             p{ 
                 position:absolute;
                 bottom:0;
@@ -130,7 +131,7 @@ header{
                 overflow:hidden;
             }
             h2{
-                padding:10px;
+                margin-top: 30px;
             }
         }
     }
@@ -144,8 +145,9 @@ header{
             outline:none;
             padding: 10px 20px;
             font-size:1.2em;
-            color: white;
-            background-image: linear-gradient(to right,black 40%,rgb(63, 20, 20));
+            color: black;
+            background-image:white;
+
             background-position: 0 200%;
             margin-right: 20px;
             margin-bottom: 40px;
