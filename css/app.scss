@@ -64,8 +64,12 @@ header{
 .main{
     position:relative;
     width:100%;
-    height: min-width(90vh);
+    min-height:80vh;
     background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
      .lodding{
           width: 100%;
           position: fixed;
@@ -94,8 +98,8 @@ header{
         height: min-width(90vh);
         margin: 0px auto;
         padding: 60px;
+        flex-wrap: wrap;
         justify-content: space-around;
-       flex-wrap: wrap;
         .box{
             cursor:pointer;
             position:relative;
