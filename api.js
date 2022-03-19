@@ -27,12 +27,12 @@ class Apimovie{
         })
 
         // gestion des details de l'affichage
-        document.addEventListener('click',(e)=>{
+        document.body.addEventListener('click',(e)=>{
             if(e.target.className === 'box'){
+                console.log('click');
               this.detailscontent(e.target);
             }
         })
-
         }
         /**
          * @param {HTMLElement} root
@@ -44,7 +44,7 @@ class Apimovie{
         let image=document.querySelector('.image img').getAttribute('src');
 
         let details=document.createElement('div')
-        details.className='detais';
+        details.className='details';
         details.innerHTML=`
         <div class="content">
         <h2>${h2}</h2>
@@ -53,7 +53,7 @@ class Apimovie{
         </div>
         `;
 
-        document.body.appendChild('detail')
+        document.body.appendChild(details)
      }.bind(this)   
     /**
      * 
