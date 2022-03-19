@@ -10,13 +10,13 @@ class Apimovie{
         this.lodding=true;
 
         // methode qui va faire la requete a l'api
-        this.fetchapi(this.keyapi,this.tab,this.page);
+        this.fetchapi(this.keyapi,this.tab,this.page,load);
         //gestion du loder
 
         //   getion de la recherche dans l'application
           this.form.addEventListener('submit',(e)=>{
               e.preventDefault();
-            this.serch(this.tab,this.container,this.form);
+            this.serch(this.tab,this.container,this.form,load);
           })
           
         //getion de la recherche de plus de movie
@@ -73,7 +73,7 @@ class Apimovie{
      * 
      * @param {string} key  
      */
-    fetchapi=function(key,tab,page=50){
+    fetchapi=function(key,tab,page=50,load){
         let i=1;
         let clear=setInterval(() => {
             fetch(`https://api.themoviedb.org/3/movie/${(page === 50? 550 :550+page)+i}?api_key=${key}`)
@@ -183,5 +183,4 @@ class Apimovie{
 
     }.bind(this);
 };
-
-export {Apimovie};
+export default Apimovie;
