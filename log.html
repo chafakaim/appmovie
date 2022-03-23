@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container{
+            max-width: 900px;
+            background-color: #eec9c9;
+            color: black;
+            
+            border-radius: 5px;
+            padding: 50px;
+
+        }
+        .container div{
+            padding: 15px;
+           
+        }
+        .container div label{
+             font-size: 1.2em ;
+             font-weight: bold;
+        }
+        
+        .container div input{
+            padding:5px 10px;
+            width: 250px;
+            margin-left:20px ;
+            border: none;
+            font-size: 1.3em;
+
+        }       
+        .container input:nth-child(2){
+            margin-left:30px ;
+        }
+        .container form button{
+            padding:10px 15px;
+            
+            font-size: 18px;
+            outline: none;
+            border: none;
+            color: black;
+            background-color: white;
+
+        }
+    </style>
+</head>
+<body>
+ <div class="container">
+    <h1>login in</h1>
+    <form >
+        <div>
+            <label for="">userName</label>
+            <input type="text" name="user" id="user">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="email" name="user" id="user">
+        </div>
+        <div>
+            <label for="">Password</label>
+            <input type="password" name="user" id="user">
+        </div>
+        <button type="submit">Envoyer</button>
+    </form>
+ </div>
+ <script src="./auth.js" type="module"></script>
+</body>
+</html>

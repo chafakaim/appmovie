@@ -8,7 +8,10 @@ class Apimovie{
         this.page=50
         this.urls='https://image.tmdb.org/t/p/w500';
         this.lodding=true;
+        
 
+        // getion de la connextion
+      
         // methode qui va faire la requete a l'api
         this.fetchapi(this.keyapi,this.tab,this.page,load);
         //gestion du loder

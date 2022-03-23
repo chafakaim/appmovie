@@ -1,4 +1,5 @@
 import Apimovie from "./api.js"
+
 let key='ca451e264da44b3b907051f63fa549e8';
 let container= document.querySelector('.container');
 let form=document.querySelector('form')
