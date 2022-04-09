@@ -8,10 +8,7 @@ class Apimovie{
         this.page=50
         this.urls='https://image.tmdb.org/t/p/w500';
         this.lodding=true;
-        
 
-        // getion de la connextion
-      
         // methode qui va faire la requete a l'api
         this.fetchapi(this.keyapi,this.tab,this.page,load);
         //gestion du loder
@@ -86,7 +83,6 @@ class Apimovie{
             .then(data=>{
             tab.push(data);
             })
-              console.log(tab)
             // clean du set intervale a une longeur volue du this.tab
             if(tab.length >= page){
                 clearInterval(clear);
@@ -94,8 +90,8 @@ class Apimovie{
                 this.display(tab,this.container);
                 // gestion du lodeur de la page
                 if(this.lodding === false){
-                    load.classList.add('fade');
-                    load.addEventListener('transitionend',function(){
+                    this.load.classList.add('fade');
+                    this.load.addEventListener('transitionend',function(){
                        if(this.classList.contains('fade')){
                            this.classList.add('in');
                        }
